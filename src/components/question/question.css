@@ -1,0 +1,122 @@
+.question-container {
+    border-radius: 14px;
+    width: 100%;
+    height: fit-content;
+    padding: 6% 8%;
+    background-color: white;
+
+    .student-name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 800;
+        gap: 8px;
+
+        .student-circle {
+            width: 12px;
+            height: 12px;
+            /* border-radius: 50px; */
+        }
+    }
+
+    .answer-question {
+        background-color: var(--color-blue);
+        width: fit-content;
+        margin-top: 6%;
+        padding: 3% 6%;
+        border-radius: 10px;
+        font-weight: 600px;
+        font-size: var(--fs-small);
+        color: white;
+        transition: all 0.1s ease-in-out;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .answer-question:hover {
+        background-color: var(--color-black);
+    }
+
+    .answering {
+        background-color: var(--color-accent);
+        border-radius: 8px;
+        padding: 3% 3% 3% 6%;
+        display: flex;
+        flex-direction: column;
+
+        .answer-block {
+            padding-bottom: 6%;
+
+            .answer-textarea {
+                width: 95%;
+                height: 178px;
+                margin-top: 1%;
+                resize: none;
+                overflow: hidden;
+                background-color: transparent;
+                border: none;
+                font-family: "Manrope";
+            }
+
+            .answer-textarea:focus {
+                outline: none;
+            }
+        }
+
+        .answer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .answer-action {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+                .submit-answer,
+                .cancel-answer {
+                    width: 32px;
+                    height: 32px;
+                    display: grid;
+                    border-radius: 8px;
+                    place-items: center;
+                    transition: all 0.1s ease-in-out;
+                }
+
+                .submit-answer:hover,
+                .cancel-answer:hover {
+                    background-color: var(--color-black);
+
+                    .icon {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ask-container {
+    background-color: white;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    padding: 4%;
+    input {
+        border: none;
+        padding: 8%;
+        border-radius: 14px;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    .send-question-button {
+        background-color: var(--color-black);
+        color: white;
+        border-radius: 14px;
+    }
+}

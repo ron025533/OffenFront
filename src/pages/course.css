@@ -1,0 +1,276 @@
+.course-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 5%;
+        border-right: 1px solid var(--color-accent);
+        padding: 2% 0 0 0;
+        gap: 124px;
+
+        .logo {
+            border-radius: 50px;
+            background-color: var(--color-black);
+            width: 36px;
+            height: 36px;
+        }
+
+        .section-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .section-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 12px;
+                display: grid;
+                place-items: center;
+                transition: all 0.16s ease-in-out;
+                cursor: pointer;
+
+                .icon-sidebar {
+                    color: var(--color-black);
+                }
+            }
+
+            .section-icon:hover {
+                background-color: var(--color-accent);
+                scale: 1.1;
+            }
+
+            .section-icon-selected {
+                background-color: var(--color-blue);
+
+                .icon-sidebar {
+                    color: white;
+                    fill: white;
+                }
+            }
+
+            .section-icon-selected:hover {
+                background-color: var(--color-blue);
+            }
+        }
+    }
+
+    .title-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        pointer-events: none;
+        padding: 8px 0;
+        gap: 8px;
+
+        .course-title {
+            font-size: var(--fs-small);
+            font-weight: 600;
+            background-color: #f0f0f0;
+            opacity: 78%;
+            border-radius: 6px;
+            padding: 4px 12px;
+        }
+    }
+
+    .left-list {
+        display: flex;
+        padding: 1%;
+        background-color: var(--color-accent);
+        overflow: hidden;
+    }
+
+    .course-content {
+        padding: 4% 8%;
+        width: 80%;
+        max-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .language-selector {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 0 32.5% 4.9% 0;
+            z-index: 1000;
+            background-color: var(--color-black);
+            /* border-radius: 14px; */
+            padding-right: 8px;
+            font-family: 'Manrope';
+
+            .language-select {
+                width: 150px;
+                padding: 18px;
+                border-radius: 3px;
+                font-size: 16px;
+                background-color: var(--color-black);
+                border: none;
+                color: white;
+                /* border-radius: 14px; */
+            }
+        }
+    }
+
+    .course-content-resized {
+        width: 54%;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .item-list-bar {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        margin-bottom: 1%;
+        user-select: none;
+        z-index: 1;
+
+        .item-list {
+            width: fit-content;
+            height: fit-content;
+            border-radius: 14px;
+            background-color: var(--color-black);
+            display: flex;
+            pointer-events: all;
+            padding: 6px;
+            align-items: center;
+            gap: 6px;
+
+            .item-list-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+                font-weight: 600;
+                color: white;
+
+                .item-bar-icon {
+                    color: white;
+                }
+            }
+
+            .item-list-section:hover {
+                background-color: var(--color-dark);
+                cursor: pointer;
+            }
+
+            .item-list-section-active {
+                background-color: var(--color-blue);
+            }
+
+            .item-list-section-active:hover {
+                background-color: var(--color-blue);
+            }
+
+            .item-list-text-active {
+                background-color: #FCFCFC;
+
+                .item-bar-icon {
+                    color: var(--color-black);
+                }
+            }
+
+            .item-list-text-active:hover {
+                background-color: #FCFCFC;
+            }
+
+            .separation-vertical {
+                width: 1px;
+                height: 20px;
+                background-color: var(--color-dark);
+            }
+        }
+    }
+
+    .hide-this-item {
+        display: none;
+    }
+}
+
+.leave-course-btn {
+    display: none;
+}
+
+.end-course-btn, .leave-course-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-black);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Manrope';
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.1s ease-in-out;
+}
+
+.end-course-btn:hover {
+    transform: scale(1.05);
+    color: var(--color-black);
+    border: 2px solid var(--color-black);
+    background: white;
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+.end-course-btn:active {
+    transform: scale(0.9);
+}
+
+
+.editor {
+    padding-top: 2%;
+}
+
+@media (max-width: 768px) {
+    .course-container {
+        .sidebar {
+            display: none;
+        }
+
+        .editor {
+            margin-top: 14%;
+        }
+
+        .title-container {
+            margin-top: 2%;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .item-list-bar {
+            display: none;
+        }
+
+        .end-course-btn {
+            display: none;
+        }
+
+        .leave-course-btn {
+            display: flex;
+        }
+    }
+}
+
+textarea.editor {
+    resize: none;
+    width:100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-family: 'Manrope';
+}

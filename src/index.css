@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('./assets/fonts/Manrope-VariableFont_wght.ttf') format('truetype'),
+}
+
+:root {
+  font-family: 'Manrope';
+
+  /* COLORS */
+  --color-accent: #ececec;
+  --color-blue: #5076f3;
+  --color-black: #272D2D;
+  --color-dark: #4d4e4e;
+
+  /* FONTSIZE */
+  --fs-title: 36px;
+  --fs-big-text: 24px;
+  --fs-paragraph: 22px;
+  --fs-big: 20px;
+  --fs-base: 16px;
+  --fs-small: 14px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--color-black);
+}

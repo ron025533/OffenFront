@@ -1,0 +1,350 @@
+/* playcourse.css */
+.play-container {
+  width: 88%;
+  font-family: 'Manrope';
+  color: var(--color-black);
+  background-color: white;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 4% 6%;
+}
+
+.play-container-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 28px;
+    color: var(--color-black);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+.icon {
+  vertical-align: middle;
+}
+
+.text-input-container {
+  overflow: hidden;
+}
+
+.text-input,
+.highlighted-text {
+  width: 100%;
+  min-height: 400px;
+  padding: 1%;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+  font-family: 'Manrope';
+}
+
+.highlighted-text {
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.highlighted-word {
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 2px;
+}
+
+.clickable-word {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.clickable-word:hover {
+  background-color: #e8f0fe;
+  border-radius: 2px;
+}
+
+.controls-container {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1% 2%;
+  margin-bottom: 1%;
+  margin-left: 5%;
+  width: fit-content;
+  border-radius: 14px;
+  background-color: var(--color-black);
+  color: white;
+  gap: 32px;
+}
+
+.voice-selector,
+.rate-control,
+.pitch-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  outline: none;
+
+  .rate {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 80px;
+    text-align: center;
+  }
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+.voice-select {
+  padding: 0.5rem;
+  border: 1px solid var(--color-black);
+  background-color: var(--color-black);
+  border-right: 2px solid var(--color-black);
+  font-size: 0.9rem;
+  font-family: 'Manrope';
+  color: white;
+}
+
+.slider {
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #e0e0e0;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--color-blue);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #4a90e2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.follow-option {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 6.4% 5%;
+  background-color: var(--color-black);
+  color: white;
+  padding: 1%;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.follow-option input {
+  transform: scale(1.2);
+  background-color: var(--color-blue);
+}
+
+.follow-option:hover {
+  background-color: white;
+  color: var(--color-black);
+  border: 2px solid var(--color-black);
+}
+
+
+.follow-option label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+button {
+  min-width: 48px;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.speak-button {
+  border-radius: 24px;
+  padding: 0.75rem 1.25rem;
+  min-width: 120px;
+}
+
+.button-icon {
+  color: white;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.speak-button {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.pause-button {
+  background-color: #f39c12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+  color: white;
+}
+
+.stop-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.instruction-text {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .controls-container {
+    grid-template-columns: 1fr;
+  }
+
+  .button-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.play-stop-container {
+  position: absolute;
+  width: 264px;
+  height: 66px;
+  bottom: 0;
+  right: 0;
+  margin: 0 5% 1% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  /* background-color: var(--color-black); */
+  border-radius: 16px;
+
+  .speak-button {
+    background-color: var(--color-blue);
+    border-radius: 16px;
+    display: flex;
+    gap: 8px;
+    /* padding: 8.6% 0; */
+    font-family: 'Manrope';
+    font-weight: 700;
+    height: fit-content;
+
+    .button-icon {
+      fill: white;
+    }
+  }
+
+  .play-button,
+  .pause-button,
+  .stop-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+
+    .button-icon {
+      fill: white;
+    }
+  }
+
+  .play-button {
+    background-color: var(--color-blue);
+  }
+
+  .stop-button {
+    background-color: white;
+    border: 2px solid var(--color-black);
+
+    .button-icon {
+      color: var(--color-black);
+      fill: var(--color-black);
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .play-container {
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    .instruction-text {
+      display: none;
+    }
+
+    .text-input {
+      height: 64vh;
+    }
+
+    .play-stop-container {
+      margin-bottom: 18%;
+      margin-right: -15%;
+    }
+
+    .follow-option {
+      position: absolute;
+      padding: 4%;
+      margin-bottom: 20%;
+    }
+
+    .controls-container {
+      width: fit-content;
+      width: 78%;
+      margin-bottom: 4%;
+      padding: 2% 6%;
+    }
+    
+    select {
+      width: 100%;
+    }
+
+    .pitch-control, .rate-control {
+      display: none;
+    }
+  }
+}

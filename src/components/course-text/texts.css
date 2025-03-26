@@ -1,0 +1,21 @@
+.course-title {
+    font-weight: 800;
+    font-size: var(--fs-title);
+}
+
+.course-big-text {
+    font-size: var(--fs-big-text);
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.course-little-text {
+    font-size: var(--fs-paragraph);
+    font-weight: 600;
+}
+
+.course-paragraph {
+    font-size: var(--fs-paragraph);
+    text-align: justify;
+    color: var(--color-dark);
+}

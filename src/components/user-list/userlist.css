@@ -1,0 +1,41 @@
+.left-list {
+    display: flex;
+    padding: 1%;
+    background-color: var(--color-accent);
+    overflow: hidden;
+    width: 22%;
+    flex-direction: column;
+    gap: 8px;
+
+    .list-text {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .user-block {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        justify-content: space-between;
+        padding: 4% 6%;
+        height: fit-content;
+        font-weight: 700;
+        color: var(--color-dark);
+        border-radius: 12px;
+        transition: all 0.1s ease-in-out;
+
+        .online {
+            width: 8px;
+            height: 8px;
+            background-color: #95E06C;
+            border-radius: 50px;
+        }
+    }
+
+    .user-block:hover {
+        background-color: var(--color-black);
+        color: white;
+        cursor: pointer;
+        scale: 1.02;
+    }
+}
